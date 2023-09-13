@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  SeSACUnSplashProject
+
+  Created by 선상혁 on 2023/09/11.
+  
+*/
+
+"nickname_placeholder" = "ニックネームを入力してください";
+
+"nickname_result" = "당신의 닉네임은 선상혁입니다";

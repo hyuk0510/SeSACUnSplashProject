@@ -29,6 +29,11 @@
 		D851F3792AB0629200081AD5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D851F3782AB0629200081AD5 /* SnapKit */; };
 		D851F37C2AB0671700081AD5 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851F37A2AB0671700081AD5 /* PhotoTableViewCell.swift */; };
 		D851F37D2AB0671700081AD5 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D851F37B2AB0671700081AD5 /* PhotoTableViewCell.xib */; };
+		D851F38B2AB139E300081AD5 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851F38A2AB139E300081AD5 /* CalculateViewController.swift */; };
+		D851F38D2AB13A9E00081AD5 /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851F38C2AB13A9E00081AD5 /* CalculateViewModel.swift */; };
+		D851F38F2AB13DAB00081AD5 /* SunObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851F38E2AB13DAB00081AD5 /* SunObservable.swift */; };
+		D851F3922AB296EC00081AD5 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851F3912AB296EC00081AD5 /* SimpleTableViewController.swift */; };
+		D851F3942AB2A00F00081AD5 /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851F3932AB2A00F00081AD5 /* SimpleCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +68,11 @@
 		D851F36A2AB02DA200081AD5 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		D851F37A2AB0671700081AD5 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		D851F37B2AB0671700081AD5 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
+		D851F38A2AB139E300081AD5 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
+		D851F38C2AB13A9E00081AD5 /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
+		D851F38E2AB13DAB00081AD5 /* SunObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunObservable.swift; sourceTree = "<group>"; };
+		D851F3912AB296EC00081AD5 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
+		D851F3932AB2A00F00081AD5 /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,8 @@
 		D851F3242AAE992300081AD5 /* SeSACUnSplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				D851F3902AB296DB00081AD5 /* New */,
+				D851F3892AB139B800081AD5 /* Calculate */,
 				D851F3632AB02A4A00081AD5 /* Photo */,
 				D851F3582AAFED4100081AD5 /* Login */,
 				D851F3252AAE992300081AD5 /* AppDelegate.swift */,
@@ -136,6 +148,25 @@
 				D851F37B2AB0671700081AD5 /* PhotoTableViewCell.xib */,
 			);
 			path = Photo;
+			sourceTree = "<group>";
+		};
+		D851F3892AB139B800081AD5 /* Calculate */ = {
+			isa = PBXGroup;
+			children = (
+				D851F38A2AB139E300081AD5 /* CalculateViewController.swift */,
+				D851F38C2AB13A9E00081AD5 /* CalculateViewModel.swift */,
+				D851F38E2AB13DAB00081AD5 /* SunObservable.swift */,
+			);
+			path = Calculate;
+			sourceTree = "<group>";
+		};
+		D851F3902AB296DB00081AD5 /* New */ = {
+			isa = PBXGroup;
+			children = (
+				D851F3912AB296EC00081AD5 /* SimpleTableViewController.swift */,
+				D851F3932AB2A00F00081AD5 /* SimpleCollectionViewController.swift */,
+			);
+			path = New;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,13 +258,18 @@
 				D851F32A2AAE992300081AD5 /* ViewController.swift in Sources */,
 				D851F3262AAE992300081AD5 /* AppDelegate.swift in Sources */,
 				D851F35A2AAFED5100081AD5 /* LoginViewController.swift in Sources */,
+				D851F38F2AB13DAB00081AD5 /* SunObservable.swift in Sources */,
 				D851F3672AB02A5C00081AD5 /* APIService.swift in Sources */,
 				D851F3692AB02B4B00081AD5 /* PhotoViewController.swift in Sources */,
 				D851F3652AB02A5300081AD5 /* Photo.swift in Sources */,
+				D851F38B2AB139E300081AD5 /* CalculateViewController.swift in Sources */,
 				D851F35C2AAFF2F700081AD5 /* Observable.swift in Sources */,
 				D851F3282AAE992300081AD5 /* SceneDelegate.swift in Sources */,
 				D851F3602AB0015400081AD5 /* SampleViewModel.swift in Sources */,
 				D851F36B2AB02DA200081AD5 /* PhotoViewModel.swift in Sources */,
+				D851F3942AB2A00F00081AD5 /* SimpleCollectionViewController.swift in Sources */,
+				D851F38D2AB13A9E00081AD5 /* CalculateViewModel.swift in Sources */,
+				D851F3922AB296EC00081AD5 /* SimpleTableViewController.swift in Sources */,
 				D851F35E2AAFFDEB00081AD5 /* SampleViewController.swift in Sources */,
 				D851F3622AB00E4100081AD5 /* LoginViewModel.swift in Sources */,
 			);

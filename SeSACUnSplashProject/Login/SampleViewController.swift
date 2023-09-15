@@ -7,12 +7,27 @@
 
 import UIKit
 
-struct User {
+class User: Hashable {
+    static func == (lhs: User, rhs: User) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
     let name: String
     let age: Int
     
+    let id = UUID().uuidString
+    
     var introduce: String {
         return "\(name), \(age)살"
+    }
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
     }
 }
 
@@ -59,9 +74,16 @@ extension SampleViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "sampleCell")!
-        let data = viewModel.cellForRowAt(at: indexPath)
-        cell.textLabel?.text = data.introduce
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "sampleCell")!
+//        let data = viewModel.cellForRowAt(at: indexPath)
+//        cell.textLabel?.text = data.introduce
+        
+        let cell = UITableViewCell()
+        var content = cell.defaultContentConfiguration()
+        content.text = "테스트" //textLabel
+        content.secondaryText = "안녕하세요 \(indexPath.row)" //detailTextLabel
+        cell.contentConfiguration = content // Protocol as Type
+                
         return cell
     }
     

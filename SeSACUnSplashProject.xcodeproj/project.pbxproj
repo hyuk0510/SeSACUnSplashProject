@@ -34,6 +34,7 @@
 		D851F38F2AB13DAB00081AD5 /* SunObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851F38E2AB13DAB00081AD5 /* SunObservable.swift */; };
 		D851F3922AB296EC00081AD5 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851F3912AB296EC00081AD5 /* SimpleTableViewController.swift */; };
 		D851F3942AB2A00F00081AD5 /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851F3932AB2A00F00081AD5 /* SimpleCollectionViewController.swift */; };
+		D851F3A12AB8854700081AD5 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851F3A02AB8854700081AD5 /* NumberViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		D851F38E2AB13DAB00081AD5 /* SunObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunObservable.swift; sourceTree = "<group>"; };
 		D851F3912AB296EC00081AD5 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		D851F3932AB2A00F00081AD5 /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
+		D851F3A02AB8854700081AD5 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				D851F35D2AAFFDEB00081AD5 /* SampleViewController.swift */,
 				D851F35F2AB0015400081AD5 /* SampleViewModel.swift */,
 				D851F3612AB00E4100081AD5 /* LoginViewModel.swift */,
+				D851F3A02AB8854700081AD5 /* NumberViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				D851F3672AB02A5C00081AD5 /* APIService.swift in Sources */,
 				D851F3692AB02B4B00081AD5 /* PhotoViewController.swift in Sources */,
 				D851F3652AB02A5300081AD5 /* Photo.swift in Sources */,
+				D851F3A12AB8854700081AD5 /* NumberViewController.swift in Sources */,
 				D851F38B2AB139E300081AD5 /* CalculateViewController.swift in Sources */,
 				D851F35C2AAFF2F700081AD5 /* Observable.swift in Sources */,
 				D851F3282AAE992300081AD5 /* SceneDelegate.swift in Sources */,

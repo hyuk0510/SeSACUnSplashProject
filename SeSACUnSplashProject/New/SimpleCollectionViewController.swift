@@ -8,6 +8,29 @@
 import UIKit
 import SnapKit
 
+class NewSimpleViewModel {
+    let list: Observable<[User]> = Observable([])
+    
+    let list2 = [User(name: "Sang", age: 27), User(name: "Sang", age: 17), User(name: "Hyuk", age: 7)]
+    
+    func append() {
+        list.value = [User(name: "Sun", age: 27), User(name: "Sun", age: 27), User(name: "Hyuk", age: 7)]
+    }
+    
+    func remove() {
+        list.value = []
+    }
+    
+    func removeUser(idx: Int) {
+        list.value.remove(at: idx)
+    }
+    
+    func inserUser(name: String) {
+        let user = User(name: name, age: Int.random(in: 10...70))
+        list.value.insert(user, at: Int.random(in: 0...2))
+    }
+}
+
 class SimpleCollectionViewController: UIViewController {
     
     enum Section: Int, CaseIterable {
@@ -15,10 +38,8 @@ class SimpleCollectionViewController: UIViewController {
         case second
     }
     
-    let list = [User(name: "Sun", age: 27), User(name: "Sun", age: 27), User(name: "Hyuk", age: 7)]
+    var viewModel = NewSimpleViewModel()
     
-    let list2 = [User(name: "Sang", age: 27), User(name: "Sang", age: 17), User(name: "Hyuk", age: 7)]
-
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
 
     var dataSource: UICollectionViewDiffableDataSource<String, User>!
@@ -26,20 +47,35 @@ class SimpleCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let searchBar = UISearchBar()
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
+        
         view.addSubview(collectionView)
+        collectionView.delegate = self
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
 
         configureDataSource()
+       
+        viewModel.list.bind { user in
+            self.updateSnapshot()
+        }
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.viewModel.append()
+        }
+        
+    }
+    
+    func updateSnapshot() {
         var snapshot = NSDiffableDataSourceSnapshot<String, User>()
         snapshot.appendSections(["aa", "bb"])
-        snapshot.appendItems(list, toSection: "aa")
-        snapshot.appendItems(list2, toSection: "bb")
+        snapshot.appendItems(viewModel.list.value, toSection: "aa")
+        snapshot.appendItems(viewModel.list2, toSection: "bb")
         
         dataSource.apply(snapshot)
-        
     }
     
     static private func createLayout() -> UICollectionViewLayout {
@@ -79,6 +115,26 @@ class SimpleCollectionViewController: UIViewController {
            
             return cell
         })
+    }
+}
+
+extension SimpleCollectionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //let user = viewModel.list.value[indexPath.item]
+        
+        guard let user = dataSource.itemIdentifier(for: indexPath) else {
+            return
+        }
+        
+        dump(user)
+        //viewModel.removeUser(idx: indexPath.item)
+    }
+}
+
+extension SimpleCollectionViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.inserUser(name: searchBar.text!)
     }
 }
 
